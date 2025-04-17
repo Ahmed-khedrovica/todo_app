@@ -38,6 +38,7 @@ dependencies:
   path_provider: ^2.1.5
   analyzer: 4.6.0
   flutter_bloc: ^9.1.0
+  modal_progress_hud_nsn: ^0.5.1
 
 
 dev_dependencies:
