@@ -9,6 +9,7 @@ class NoteItem extends StatelessWidget {
   const NoteItem({super.key, required this.note});
 
   final NoteModel note;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -16,7 +17,9 @@ class NoteItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) {
-            return const EditNoteView();
+            return  EditNoteView(
+              note: note,
+            );
           }),
         );
       },
@@ -30,7 +33,7 @@ class NoteItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title:  Text(
+              title: Text(
                 note.title,
                 style: const TextStyle(
                   color: Colors.black,
@@ -38,7 +41,7 @@ class NoteItem extends StatelessWidget {
                 ),
               ),
               subtitle: Padding(
-                padding:  EdgeInsets.only(top: 16),
+                padding: EdgeInsets.only(top: 16),
                 child: Text(
                   note.subTitle,
                   style: TextStyle(
